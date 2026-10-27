@@ -1,0 +1,14 @@
+$ skillvet policy --strict --no-details
+
+  skillvet — security audit for AI agent skills, hooks and MCP configs
+
+  HIGH     SV001  SKILL.md:1                                       Hidden instruction inside an HTML comment
+  MEDIUM   SV002  SKILL.md:1                                       Prompt-override or jailbreak phrasing
+
+  scanned 2 agent file(s)
+  findings: 1 high, 1 medium
+  rule-signal score: 86/100 (not a safety guarantee)
+  exclusions: 0 path(s), 0 suppressed finding(s), 0 display-filtered finding(s)
+  coverage notes: 0; errors: 0
+  verdict: FAIL (fail-on: high)
+[exit 1]

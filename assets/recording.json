@@ -1,0 +1,105 @@
+{
+  "source_cast_sha256": "14c90cd088a85d998758eb3c7a714c62a95dba14f921d3c6c3a2334381b8d7a2",
+  "event_count": 18,
+  "actual_commands": 7,
+  "view_selection": "showcase.py selects explicitly labelled JSON/SARIF fields; full unfiltered CLI output retained under assets/reports. No path replacement or edited cast events.",
+  "rendering": "Faithful stdout text with visual wrapping; GIF extended reading holds, not elapsed runtime.",
+  "features": [
+    {
+      "name": "status",
+      "transcript_sha256": "1832d48a3f018add6b35e033516d8279b2f914cfb34b7170eea5f705341fe3bb"
+    },
+    {
+      "name": "receipts",
+      "transcript_sha256": "f14326d17bda47b38fb0537573dda4575dbff8a7bde6d1f2612b808ffb941d91"
+    },
+    {
+      "name": "strict",
+      "transcript_sha256": "c2590572fe8a4f04b68e036bf9f4e5e7cc01ee09970aad3966b5ddce85cd6772"
+    },
+    {
+      "name": "redaction",
+      "transcript_sha256": "28708c3c6051f3381cdf083235c3e756d5a31fe8214a7dfdfb49a0307a4bcf64"
+    },
+    {
+      "name": "permissions",
+      "transcript_sha256": "f147103fbf7acaca0f6ee3f439a5cdc4097806cd968626e9fe9957978c9af760"
+    },
+    {
+      "name": "sarif",
+      "transcript_sha256": "198e62c5f973935081afbfe8a5672ff741b2053c0e25ee42271bc51f27488c9b"
+    }
+  ],
+  "reports": {
+    "clean.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "clean.txt": "f121975e013c83b02a27eb894fe3ae17763490b10dd454ab6ebba5da64e1d875",
+    "incomplete.json": "5101cfbc0ecc7f04e67a18d8b4bc71dd425326a348eca57fcbb91d5b94c9caf5",
+    "incomplete.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "permissions.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "permissions.txt": "b879c602fa99ba490195843c4efa2c4e2558602170b5095eec8fd166aca2ce34",
+    "receipts.json": "5fa7c27847392ebabdae13c2cc9ac2a36336529995faf2f9f7c453cf4499f2d1",
+    "receipts.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "redaction.json": "5927c7ef2c87612e9c7ca4ae280e1491f0b865f7e838dcb2ebc792b77885f50b",
+    "redaction.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sarif.sarif": "92503ee99e09c8ee4dfd370217f487a74592d267c5000c9208bf59197c43ed83",
+    "sarif.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "strict.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "strict.txt": "04de6c034eccc5e598f58bd38eea0c6f4df9ca08519381afedba10d642e72bc3"
+  },
+  "assets": {
+    "demo.png": {
+      "width": 1280,
+      "height": 617,
+      "frames": 1,
+      "sha256": "7ce14054f56dc6758d784c385fe93dc0b5d72a26b05805dbb8c7668a374f8a04"
+    },
+    "demo.gif": {
+      "width": 1280,
+      "height": 617,
+      "frames": 3,
+      "sha256": "1c179b846e75c31a8328fa34858d65801e858c611733ba2607c3102e7798af4d"
+    },
+    "social-preview.png": {
+      "width": 1280,
+      "height": 640,
+      "frames": 1,
+      "sha256": "a4589a4c2b1abfb160d517b5090dab8196c391d2df38a177d2be5a2715e9e9bc"
+    },
+    "feature-status.png": {
+      "width": 1280,
+      "height": 563,
+      "frames": 1,
+      "sha256": "4f3ccea1190082cd85e213b755f297872737cbd0902e507f09dcc9e702783958"
+    },
+    "feature-receipts.png": {
+      "width": 1280,
+      "height": 1076,
+      "frames": 1,
+      "sha256": "1f1d9a78b835a3efddce1402f3bb17a1898460ca3660ab9ef21c1a223a4f7f23"
+    },
+    "feature-strict.png": {
+      "width": 1280,
+      "height": 617,
+      "frames": 1,
+      "sha256": "7ce14054f56dc6758d784c385fe93dc0b5d72a26b05805dbb8c7668a374f8a04"
+    },
+    "feature-redaction.png": {
+      "width": 1280,
+      "height": 590,
+      "frames": 1,
+      "sha256": "de6ac01ecbe94380faab5e59367258284ae5f101e498f7b19d00aed5b779c252"
+    },
+    "feature-permissions.png": {
+      "width": 1280,
+      "height": 617,
+      "frames": 1,
+      "sha256": "8a156e99216056d5603a5f20430b9a4ef0e42fdd28c52c63e7ff0d6f89d64c67"
+    },
+    "feature-sarif.png": {
+      "width": 1280,
+      "height": 1103,
+      "frames": 1,
+      "sha256": "ca2a2f11426bc4f794ae9a2294de29a35d2e3604b3a2e6fe577db7b0424a1de6"
+    }
+  }
+}

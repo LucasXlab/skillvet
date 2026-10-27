@@ -1,0 +1,37 @@
+{
+  "tool": "skillvet",
+  "root": ".",
+  "complete": true,
+  "status": "complete",
+  "coverage_notes": [],
+  "bytes_read": 92,
+  "filtered_count": 0,
+  "skipped": [],
+  "suppressed": [],
+  "files_scanned": 1,
+  "files_skipped": 0,
+  "trust_score": 90,
+  "counts": {
+    "info": 0,
+    "low": 0,
+    "medium": 0,
+    "high": 1,
+    "critical": 0
+  },
+  "findings": [
+    {
+      "rule_id": "SV007",
+      "severity": "high",
+      "title": "Hardcoded credential in an agent file",
+      "path": "SKILL.md",
+      "line": 2,
+      "snippet": "API_KEY = \"<redacted>\"",
+      "remediation": "Rotate the exposed credential and move it to an environment variable or a secret manager. Never commit tokens into skills or configs.",
+      "references": [
+        "https://genai.owasp.org/llmrisk/llm02-sensitive-information-disclosure/"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "errors": []
+}

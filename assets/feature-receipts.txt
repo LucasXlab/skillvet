@@ -1,0 +1,33 @@
+$ skillvet policy --json
+[wrapper view: selected receipts fields; full CLI report retained]
+{
+  "complete": true,
+  "trust_score": null,
+  "skipped": [
+    {
+      "path": "CLAUDE.md",
+      "reason": "path ignore",
+      "source": "target .skillvetignore",
+      "patterns": [
+        "CLAUDE.md"
+      ]
+    }
+  ],
+  "suppressed": [
+    {
+      "rule_id": "SV001",
+      "path": "SKILL.md",
+      "line": 1,
+      "source": "inline target-controlled suppression",
+      "reason": "target directive: ALL"
+    },
+    {
+      "rule_id": "SV002",
+      "path": "SKILL.md",
+      "line": 1,
+      "source": "inline target-controlled suppression",
+      "reason": "target directive: ALL"
+    }
+  ]
+}
+[exit 0]

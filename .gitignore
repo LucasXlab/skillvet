@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.venv/
+venv/
+.coverage
+htmlcov/
+.DS_Store
+
+.ruff_cache/
+coverage.xml
+coverage.json
+wheel-smoke/

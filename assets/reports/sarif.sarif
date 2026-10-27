@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "skillvet",
+          "version": "1.0.0",
+          "rules": [
+            {
+              "id": "SV007",
+              "shortDescription": {
+                "text": "Hardcoded credential in an agent file"
+              },
+              "fullDescription": {
+                "text": "Rotate the exposed credential and move it to an environment variable or a secret manager. Never commit tokens into skills or configs."
+              },
+              "help": {
+                "text": "Rotate the exposed credential and move it to an environment variable or a secret manager. Never commit tokens into skills or configs."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "properties": {
+                "tags": [
+                  "security"
+                ],
+                "ruleSeverity": "high"
+              },
+              "helpUri": "https://genai.owasp.org/llmrisk/llm02-sensitive-information-disclosure/"
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "SV007",
+          "ruleIndex": 0,
+          "level": "error",
+          "message": {
+            "text": "Hardcoded credential in an agent file. Rotate the exposed credential and move it to an environment variable or a secret manager. Never commit tokens into skills or configs. Evidence: API_KEY = \"<redacted>\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "SKILL.md"
+                },
+                "region": {
+                  "startLine": 2
+                }
+              }
+            }
+          ],
+          "properties": {
+            "confidence": "medium"
+          }
+        }
+      ],
+      "invocations": [
+        {
+          "executionSuccessful": true,
+          "toolExecutionNotifications": []
+        }
+      ],
+      "properties": {
+        "pathBase": "scan-root-relative",
+        "ruleSignalScore": 90,
+        "filesScanned": 1,
+        "filesSkipped": 0,
+        "suppressed": [],
+        "coverageNotes": []
+      }
+    }
+  ]
+}

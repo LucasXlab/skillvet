@@ -1,0 +1,14 @@
+$ skillvet clean --strict --quiet
+PASS scanned=1 findings=0 suppressed=0 errors=0 fail-on=high
+[exit 0]
+$ skillvet incomplete --strict --json
+[wrapper view: selected incomplete fields; full CLI report retained]
+{
+  "complete": false,
+  "status": "incomplete",
+  "trust_score": null,
+  "errors": [
+    ".mcp.json: invalid JSON configuration"
+  ]
+}
+[exit 2]

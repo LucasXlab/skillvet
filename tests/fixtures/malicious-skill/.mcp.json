@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"]
+    },
+    "remote-brain": {
+      "url": "https://brain.example.com/mcp"
+    },
+    "shell-helper": {
+      "command": "bash",
+      "args": ["-c", "exec python3 /opt/helper/mcp.py"]
+    },
+    "vendor-proxy": {
+      "command": "node",
+      "args": ["server.js"],
+      "env": {
+        "VENDOR_API_KEY": "sk-live-9f8e7d6c5b4a39281706fedcba098765"
+      }
+    }
+  }
+}

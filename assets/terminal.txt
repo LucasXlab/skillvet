@@ -1,0 +1,124 @@
+$ skillvet clean --strict --quiet
+PASS scanned=1 findings=0 suppressed=0 errors=0 fail-on=high
+[exit 0]
+$ skillvet incomplete --strict --json
+[wrapper view: selected incomplete fields; full CLI report retained]
+{
+  "complete": false,
+  "status": "incomplete",
+  "trust_score": null,
+  "errors": [
+    ".mcp.json: invalid JSON configuration"
+  ]
+}
+[exit 2]
+$ skillvet policy --json
+[wrapper view: selected receipts fields; full CLI report retained]
+{
+  "complete": true,
+  "trust_score": null,
+  "skipped": [
+    {
+      "path": "CLAUDE.md",
+      "reason": "path ignore",
+      "source": "target .skillvetignore",
+      "patterns": [
+        "CLAUDE.md"
+      ]
+    }
+  ],
+  "suppressed": [
+    {
+      "rule_id": "SV001",
+      "path": "SKILL.md",
+      "line": 1,
+      "source": "inline target-controlled suppression",
+      "reason": "target directive: ALL"
+    },
+    {
+      "rule_id": "SV002",
+      "path": "SKILL.md",
+      "line": 1,
+      "source": "inline target-controlled suppression",
+      "reason": "target directive: ALL"
+    }
+  ]
+}
+[exit 0]
+$ skillvet policy --strict --no-details
+
+  skillvet — security audit for AI agent skills, hooks and MCP configs
+
+  HIGH     SV001  SKILL.md:1                                       Hidden instruction inside an HTML comment
+  MEDIUM   SV002  SKILL.md:1                                       Prompt-override or jailbreak phrasing
+
+  scanned 2 agent file(s)
+  findings: 1 high, 1 medium
+  rule-signal score: 86/100 (not a safety guarantee)
+  exclusions: 0 path(s), 0 suppressed finding(s), 0 display-filtered finding(s)
+  coverage notes: 0; errors: 0
+  verdict: FAIL (fail-on: high)
+[exit 1]
+$ skillvet redaction --strict --json
+[wrapper view: selected redaction fields; full CLI report retained]
+{
+  "complete": true,
+  "findings": [
+    {
+      "rule_id": "SV007",
+      "severity": "high",
+      "path": "SKILL.md",
+      "line": 2,
+      "snippet": "API_KEY = \"<redacted>\""
+    }
+  ]
+}
+[exit 1]
+$ skillvet permissions --strict --fail-on medium --no-details
+
+  skillvet — security audit for AI agent skills, hooks and MCP configs
+
+  MEDIUM   SV010  SKILL.md:3                                       Unrestricted shell tool granted
+  MEDIUM   SV012  SKILL.md:3                                       Wildcard tool grant or missing allow-list
+
+  scanned 1 agent file(s)
+  findings: 2 medium
+  rule-signal score: 92/100 (not a safety guarantee)
+  exclusions: 0 path(s), 0 suppressed finding(s), 0 display-filtered finding(s)
+  coverage notes: 0; errors: 0
+  verdict: FAIL (fail-on: medium)
+[exit 1]
+$ skillvet redaction --strict --sarif
+[wrapper view: selected sarif fields; full CLI report retained]
+{
+  "version": "2.1.0",
+  "driver": {
+    "name": "skillvet",
+    "version": "1.0.0"
+  },
+  "invocations": [
+    {
+      "executionSuccessful": true,
+      "toolExecutionNotifications": []
+    }
+  ],
+  "results": [
+    {
+      "ruleId": "SV007",
+      "level": "error",
+      "locations": [
+        {
+          "physicalLocation": {
+            "artifactLocation": {
+              "uri": "SKILL.md"
+            },
+            "region": {
+              "startLine": 2
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+[exit 1]

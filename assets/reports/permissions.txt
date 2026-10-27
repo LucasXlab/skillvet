@@ -1,0 +1,12 @@
+
+  skillvet — security audit for AI agent skills, hooks and MCP configs
+
+  MEDIUM   SV010  SKILL.md:3                                       Unrestricted shell tool granted
+  MEDIUM   SV012  SKILL.md:3                                       Wildcard tool grant or missing allow-list
+
+  scanned 1 agent file(s)
+  findings: 2 medium
+  rule-signal score: 92/100 (not a safety guarantee)
+  exclusions: 0 path(s), 0 suppressed finding(s), 0 display-filtered finding(s)
+  coverage notes: 0; errors: 0
+  verdict: FAIL (fail-on: medium)

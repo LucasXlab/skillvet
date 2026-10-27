@@ -1,0 +1,1 @@
+PASS scanned=1 findings=0 suppressed=0 errors=0 fail-on=high

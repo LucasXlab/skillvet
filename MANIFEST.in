@@ -1,0 +1,9 @@
+include README*.md LICENSE SECURITY.md CONTRIBUTING.md Makefile .env.example LAUNCH.md
+recursive-include scripts *.py
+recursive-include .github *.yml *.yaml *.md
+recursive-include assets *.svg *.png *.gif
+recursive-include assets *.cast *.txt *.json *.sarif *.md
+recursive-include examples *
+recursive-include tests *
+global-exclude *.py[cod]
+recursive-include docs *.md

@@ -1,0 +1,15 @@
+$ skillvet redaction --strict --json
+[wrapper view: selected redaction fields; full CLI report retained]
+{
+  "complete": true,
+  "findings": [
+    {
+      "rule_id": "SV007",
+      "severity": "high",
+      "path": "SKILL.md",
+      "line": 2,
+      "snippet": "API_KEY = \"<redacted>\""
+    }
+  ]
+}
+[exit 1]

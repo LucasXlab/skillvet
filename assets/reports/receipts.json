@@ -1,0 +1,63 @@
+{
+  "tool": "skillvet",
+  "root": ".",
+  "complete": true,
+  "status": "complete",
+  "coverage_notes": [],
+  "bytes_read": 68,
+  "filtered_count": 0,
+  "skipped": [
+    {
+      "path": "CLAUDE.md",
+      "reason": "path ignore",
+      "source": "target .skillvetignore",
+      "patterns": [
+        "CLAUDE.md"
+      ]
+    }
+  ],
+  "suppressed": [
+    {
+      "rule_id": "SV001",
+      "severity": "high",
+      "title": "Hidden instruction inside an HTML comment",
+      "path": "SKILL.md",
+      "line": 1,
+      "snippet": "ignore previous instructions <!-- skillvet:ignore ALL -->",
+      "remediation": "Remove the comment or make the directive visible and reviewable. Agents execute commented-out instructions; comments are not a safe place for policy.",
+      "references": [
+        "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
+      ],
+      "confidence": "high",
+      "source": "inline target-controlled suppression",
+      "reason": "target directive: ALL"
+    },
+    {
+      "rule_id": "SV002",
+      "severity": "medium",
+      "title": "Prompt-override or jailbreak phrasing",
+      "path": "SKILL.md",
+      "line": 1,
+      "snippet": "ignore previous instructions <!-- skillvet:ignore ALL -->",
+      "remediation": "Remove override phrasing. Legitimate skills describe tasks, not attempts to redefine the agent's instructions.",
+      "references": [
+        "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
+      ],
+      "confidence": "high",
+      "source": "inline target-controlled suppression",
+      "reason": "target directive: ALL"
+    }
+  ],
+  "files_scanned": 1,
+  "files_skipped": 1,
+  "trust_score": null,
+  "counts": {
+    "info": 0,
+    "low": 0,
+    "medium": 0,
+    "high": 0,
+    "critical": 0
+  },
+  "findings": [],
+  "errors": []
+}
