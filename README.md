@@ -18,20 +18,33 @@ An instruction file is only part of a downloaded skill. Configuration may grant 
 
 Python 3.9+ on macOS or Linux. Scans use no third-party runtime dependencies. Installation may download build tools; scanned scripts are never executed.
 
+Clone the published source, then install it in an isolated environment:
+
 ```bash
+git clone --branch noah/skillvet https://github.com/LucasXlab/skillvet.git
+cd skillvet
 python3 -m venv .venv
-.venv/bin/python -m pip install .
-.venv/bin/skillvet examples/clean-skill --json
+. .venv/bin/activate
+python -m pip install .
+skillvet examples/clean-skill --json
 ```
+
+The example should exit `0` with `complete: true`, `files_scanned: 1`, and no findings. Now replace `/absolute/path/to/downloaded-skill` with a directory you want to review:
+
+```bash
+skillvet /absolute/path/to/downloaded-skill --strict --fail-on high
+```
+
+Open each reported `path:line` and review its remediation before enabling the skill. Exit `1` means the selected severity gate found something to review. Exit `2`, including **zero supported files scanned**, means the scan cannot be treated as a clean result. Recognized inputs include `SKILL.md`, `AGENTS.md`, `CLAUDE.md`, supported hook/MCP JSON, and scripts in supported directories. An arbitrary Markdown filename is not automatically an instruction file.
 
 ## Usage
 
 ### Inspect an unfamiliar directory
 
 ```bash
-.venv/bin/skillvet ./downloaded-skill --strict --json
-.venv/bin/skillvet ./downloaded-skill --strict --sarif
-.venv/bin/skillvet --list-rules
+skillvet ./downloaded-skill --strict --json
+skillvet ./downloaded-skill --strict --sarif
+skillvet --list-rules
 ```
 
 `--strict` ignores the target's `.skillvetignore` and inline suppressions. Your explicit `--ignore` choices still apply.

@@ -3,13 +3,6 @@
 <p align="center"><img src="../assets/logo.svg" width="88" height="88" alt="skillvet 标志"></p>
 <h1 align="center">skillvet</h1>
 <p align="center"><strong>启用 Agent 技能之前，先看它会要求什么。</strong></p>
-<p align="center">
-  <a href="../.github/workflows/ci.yml"><img src="../assets/badge-ci.svg" alt="CI：已配置，远端运行待完成"></a>
-  <a href="../LICENSE"><img src="../assets/badge-license.svg" alt="许可证：MIT"></a>
-  <a href="../pyproject.toml"><img src="../assets/badge-version.svg" alt="源码版本：1.0.0，不代表注册表发行"></a>
-  <a href="../pyproject.toml"><img src="../assets/badge-python.svg" alt="Python：3.9 及以上"></a>
-  <a href="https://github.com/LucasXlab/skillvet"><img src="../assets/badge-stars.svg" alt="Star：待发布"></a>
-</p>
 
 在本地检查技能、hook 和 MCP 配置中的有限风险信号。查看发现对应的规则，以及扫描无法检查的部分。脚本只按文本读取，不会执行。
 
@@ -80,6 +73,8 @@ python3 -m venv .venv
 ![同一合成目录的真实 strict 检查](../assets/feature-strict.png)
 
 ## 同时检查发现与覆盖
+
+没有扫到受支持文件时，结果为不完整并退出 `2`，所有候选都被排除也一样。请检查目标目录、受支持文件名与 ignore 回执；空目录不能作为技能检查通过的依据。
 
 | 报告字段 | 需要追问 |
 |---|---|

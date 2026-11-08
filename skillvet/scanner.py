@@ -69,6 +69,11 @@ class Scanner:
                     result.errors.append(
                         f"{file.relpath}: rule {rule.id} failed ({type(exc).__name__})"
                     )
+        if not result.files_scanned and not result.errors:
+            result.errors.append(
+                "no supported files scanned; select a directory containing SKILL.md, "
+                "agent instructions, supported configuration or scripts; check exclusions"
+            )
         result.detected_max = result.max_severity()
         # Score uses all detected findings, even when display filtering hides them.
         result.score_penalty = sum(SEVERITY_WEIGHT[f.severity] for f in result.findings)

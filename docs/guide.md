@@ -3,13 +3,6 @@
 <p align="center"><img src="../assets/logo.svg" width="88" height="88" alt="skillvet logo"></p>
 <h1 align="center">skillvet</h1>
 <p align="center"><strong>Review what an agent skill can ask for.</strong></p>
-<p align="center">
-  <a href="../.github/workflows/ci.yml"><img src="../assets/badge-ci.svg" alt="CI: prepared, remote runs pending"></a>
-  <a href="../LICENSE"><img src="../assets/badge-license.svg" alt="License: MIT"></a>
-  <a href="../pyproject.toml"><img src="../assets/badge-version.svg" alt="Source version: 1.0.0, registry release not claimed"></a>
-  <a href="../pyproject.toml"><img src="../assets/badge-python.svg" alt="Python: 3.9 or later"></a>
-  <a href="https://github.com/LucasXlab/skillvet"><img src="../assets/badge-stars.svg" alt="Stars: pending publication"></a>
-</p>
 
 Inspect local skills, hooks, and MCP configuration for finite, explainable risk signals before enabling them. See the finding, its rule, and the parts the scan could not inspect. Scanned scripts are read as text, never executed.
 
@@ -86,6 +79,8 @@ The same directory now exposes the supported findings and exits 1. Explicit call
 ![Actual strict review of the same synthetic directory](../assets/feature-strict.png)
 
 ## Read findings and coverage together
+
+If zero supported files are scanned, the result is incomplete and exits `2`, including when exclusions remove every candidate. Check the selected directory, recognized filenames, and ignore receipts before trying again. An empty directory is not a clean skill scan.
 
 | Report field | Review question |
 |---|---|
